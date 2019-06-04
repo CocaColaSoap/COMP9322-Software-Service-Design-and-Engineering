@@ -1,0 +1,137 @@
+{
+  "swagger": "2.0",
+  "basePath": "/TimeslotService",
+  "info": {
+    "version": "1.0.0",
+    "title": "Timeslot Service",
+    "description": "Timeslot Service api"
+  },
+  "paths": {
+    "/BookAppointment": {
+      "post": {
+        "tags": [
+          "TimeslotService"
+        ],
+        "parameters": [
+          {
+            "name": "Appointmentid",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Patientname",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book Successful"
+          },
+          "404": {
+            "description": "Book not Successful"
+          },
+          "500": {
+            "description": "Interval Error"
+          }
+        },
+        "description": "Book Appointment"
+      }
+    },
+    "/CancelAppointment": {
+      "post": {
+        "tags": [
+          "TimeslotService"
+        ],
+        "parameters": [
+          {
+            "name": "Appointmentid",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Patient_name",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cancel successful"
+          },
+          "404": {
+            "description": "Cancel not successful"
+          },
+          "500": {
+            "description": "Interval Error"
+          }
+        },
+        "description": "Cancel Appointment"
+      }
+    },
+    "/CheckAppointment": {
+      "get": {
+        "tags": [
+          "TimeslotService"
+        ],
+        "parameters": [
+          {
+            "name": "Patientname",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "No appointment"
+          },
+          "500": {
+            "description": "Interval Error"
+          }
+        },
+        "description": "Check Appointment"
+      }
+    },
+    "/GetDoctorTimetable": {
+      "get": {
+        "tags": [
+          "TimeslotService"
+        ],
+        "parameters": [
+          {
+            "name": "Doctor",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Date",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Doctor Timetable Getting Fail"
+          },
+          "500": {
+            "description": "Interval Error."
+          }
+        },
+        "description": "Get Doctor Timetable"
+      }
+    }
+  }
+}

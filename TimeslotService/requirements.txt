@@ -1,0 +1,7 @@
+Flask
+Jinja2
+Flask-RESTful
+jsonschema
+six
+pymongo
+swagger_py_codegen

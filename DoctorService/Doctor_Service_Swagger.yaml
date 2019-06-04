@@ -1,0 +1,55 @@
+swagger: "2.0"
+basePath: "/DoctorService"
+info:
+  version: "1.0.0"
+  title: "Doctor Service"
+  description: "Doctor Service api"
+
+schemes:
+- "http"
+
+paths:
+  /AllDoctorInformation:
+    get:
+      tags:
+      - "DoctorService"
+      responses:
+        200:
+          description: "OK."
+        404:
+          description: "No Doctor."
+      description: "Get All Doctors Information"
+  /DoctorInformation:
+    get:
+      tags:
+      - "DoctorService"
+      parameters:
+      - name: "Doctor"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "OK."
+        404:
+          description: "Doctor Does Not Exist."
+        500:
+          description: "Interval Error."
+      description: "Get Doctor Information"
+  /AvailableDoctor:
+    get:
+      tags:
+      - "DoctorService"
+      parameters:
+      - name: "Date"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "OK."
+        404:
+          description: "Query has no results."
+        500:
+          description: "Interval Error."
+      description: "Get Available Doctor through Date"
